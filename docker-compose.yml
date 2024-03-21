@@ -33,6 +33,12 @@ services:
         volumes:
             - ./:/home/node/app
             - /home/node/app/node_modules/
+    nginx:
+        restart: always
+        build:
+            context: ./nginx
+        ports:
+            - "80:80"
 
 volumes:
     db:
